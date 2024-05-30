@@ -1,3 +1,28 @@
+#page-header,
+#page-header:before {
+  background: transparent !important;
+}
+#page-header.post-bg,
+#page-header.not-home-page {
+  height: 280px !important;
+}
+#page-header #post-info {
+  bottom: 40px !important;
+}
+#page-header #page-site-info {
+  top: 140px !important;
+}
+@media screen and (max-width: 768px) {
+  #page-header.not-home-page {
+    height: 200px !important;
+  }
+  #page-header #post-info {
+    bottom: 10px !important;
+  }
+  #page-header #page-site-info {
+    top: 100px !important;
+  }
+}
 .top-img {
   height: 250px;
   margin: -50px -40px 50px;
