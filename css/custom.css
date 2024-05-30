@@ -124,10 +124,11 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 #aside-content>.sticky_layout>.card-widget{
     background: rgba(255,255,255,.6);
 }
-/*文章页面*/
+/*文章页面
 .layout>#post{
     background: rgba(255,255,255,.7);
-}
+}*/
+
 /*分类页面*/
 .layout>#page{
     
