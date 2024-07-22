@@ -20,6 +20,7 @@ https://chengshans.github.io/tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/
 https://chengshans.github.io/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/
 https://chengshans.github.io/tags/butterfly/
 https://chengshans.github.io/tags/python-git/
+https://chengshans.github.io/tags/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/
 https://chengshans.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/
 https://chengshans.github.io/tags/%E6%84%9F%E6%82%9F/
 https://chengshans.github.io/categories/Hexo/
