@@ -6,7 +6,7 @@
   <link href="https://chengshans.github.io/atom.xml" rel="self"/>
   
   <link href="https://chengshans.github.io/"/>
-  <updated>2024-07-22T07:13:50.313Z</updated>
+  <updated>2024-07-22T06:07:58.640Z</updated>
   <id>https://chengshans.github.io/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Python 内置函数。</title>
-    <link href="https://chengshans.github.io/post/57911190.html"/>
-    <id>https://chengshans.github.io/post/57911190.html</id>
-    <published>2024-07-22T07:11:00.343Z</published>
-    <updated>2024-07-22T07:13:50.313Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;/opt/nclab/airos5/src/kinder_toy/test/image/test.jpg&#x27;</span>, cv2.IMREAD_COLOR)</span><br><span class="line">color = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;/opt/nclab/airos5/src/kinder_toy/test/image/test.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json_data = json.load(f)</span><br><span class="line"></span><br><span class="line">polygon_coords = json_data[<span class="string">&#x27;shapes&#x27;</span>][<span class="number">0</span>][<span class="string">&#x27;points&#x27;</span>]</span><br><span class="line">polygon_coords = np.array(polygon_coords)</span><br><span class="line">polygon_points = polygon_coords.reshape((-<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line">pts = np.array(polygon_points, dtype=np.int32)</span><br><span class="line"></span><br><span class="line">mask = np.zeros(image.shape[:<span class="number">2</span>], dtype=np.uint8)</span><br><span class="line">cv2.fillPoly(mask, [pts], <span class="number">255</span>)</span><br><span class="line"><span class="comment"># 确保遮罩和图像的类型相同，通常为 uint8</span></span><br><span class="line">mask = mask.astype(image.dtype)</span><br><span class="line"><span class="comment"># 应用遮罩到原始图像</span></span><br><span class="line">transparent_image = cv2.bitwise_and(image, image, mask=mask)</span><br><span class="line"><span class="comment"># 将结果转换为4通道图像，以支持透明度</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(transparent_image.shape) == <span class="number">2</span> <span class="keyword">or</span> transparent_image.shape[<span class="number">2</span>] == <span class="number">3</span>:</span><br><span class="line">    transparent_image = cv2.cvtColor(transparent_image, cv2.COLOR_BGR2BGRA)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将遮罩应用到图像的透明度通道</span></span><br><span class="line">transparent_image[:, :, <span class="number">3</span>] = mask</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;mask.png&#x27;</span>, mask)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas</summary>
-      
-    
-    
-    
-    <category term="Python" scheme="https://chengshans.github.io/categories/Python/"/>
-    
-    
-    <category term="python 内置函数" scheme="https://chengshans.github.io/tags/python-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
   
   <entry>
     <title>Python 内置函数。</title>
