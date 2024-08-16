@@ -4,6 +4,106 @@
   
     
     <entry>
+      <title>明日方舟-太阳甩在身后</title>
+      <link href="/post/3cfa24d6.html"/>
+      <url>/post/3cfa24d6.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>2024.8.1–2024.8.22</p><h1 id="太阳甩在身后"><a href="#太阳甩在身后" class="headerlink" title="太阳甩在身后"></a>太阳甩在身后</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161756172.png" alt="屏幕截图 2024-08-16 175514"></p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161749735.png" alt="屏幕截图 2024-08-15 191829"></p><h1 id="市井花园"><a href="#市井花园" class="headerlink" title="市井花园"></a>市井花园</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161751769.png" alt="image-20240816175109683"></p><h1 id="丰获集会"><a href="#丰获集会" class="headerlink" title="丰获集会"></a>丰获集会</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754493.png" alt="屏幕截图 2024-08-15 191841"></p><h1 id="珍藏宝库"><a href="#珍藏宝库" class="headerlink" title="珍藏宝库"></a>珍藏宝库</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754494.png" alt="屏幕截图 2024-08-15 191849"></p><h1 id="蚀刻章"><a href="#蚀刻章" class="headerlink" title="蚀刻章"></a>蚀刻章</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754495.png" alt="屏幕截图 2024-08-15 191900"></p><h1 id="在流沙上刻印"><a href="#在流沙上刻印" class="headerlink" title="在流沙上刻印"></a>在流沙上刻印</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754496.jpg" alt="微信图片_20240816173936"></p><p>佩佩挺可爱的，通行证也算好价</p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754497.jpg" alt="微信图片_20240816173933"></p><p>本来井奶羊的，没想到快吃满了居然歪出来了<img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754498.jpg" alt="微信图片_20240816173943">绝美奶羊皮肤–远行前的野餐</p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754499.jpg" alt="微信图片_20240816173926"></p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161754500.jpg" alt="微信图片_20240816173946"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 明日方舟 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 明日方舟 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python 给出多边形坐标在图片上实现遮罩。</title>
+      <link href="/post/9481370f.html"/>
+      <url>/post/9481370f.html</url>
+      
+        <content type="html"><![CDATA[<p>给出多边形坐标在图片上实现遮罩，其中 test.json 储存多边形坐标，test.jpg 为图片。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;/opt/nclab/airos5/src/kinder_toy/test/image/test.jpg&#x27;</span>, cv2.IMREAD_COLOR)</span><br><span class="line">color = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;/opt/nclab/airos5/src/kinder_toy/test/image/test.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json_data = json.load(f)</span><br><span class="line"></span><br><span class="line">polygon_coords = json_data[<span class="string">&#x27;shapes&#x27;</span>][<span class="number">0</span>][<span class="string">&#x27;points&#x27;</span>]</span><br><span class="line">polygon_coords = np.array(polygon_coords)</span><br><span class="line">polygon_points = polygon_coords.reshape((-<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line">pts = np.array(polygon_points, dtype=np.int32)</span><br><span class="line"></span><br><span class="line">mask = np.zeros(image.shape[:<span class="number">2</span>], dtype=np.uint8)</span><br><span class="line">cv2.fillPoly(mask, [pts], <span class="number">255</span>)</span><br><span class="line"><span class="comment"># 确保遮罩和图像的类型相同，通常为 uint8</span></span><br><span class="line">mask = mask.astype(image.dtype)</span><br><span class="line"><span class="comment"># 应用遮罩到原始图像</span></span><br><span class="line">transparent_image = cv2.bitwise_and(image, image, mask=mask)</span><br><span class="line"><span class="comment"># 将结果转换为4通道图像，以支持透明度</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(transparent_image.shape) == <span class="number">2</span> <span class="keyword">or</span> transparent_image.shape[<span class="number">2</span>] == <span class="number">3</span>:</span><br><span class="line">    transparent_image = cv2.cvtColor(transparent_image, cv2.COLOR_BGR2BGRA)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将遮罩应用到图像的透明度通道</span></span><br><span class="line">transparent_image[:, :, <span class="number">3</span>] = mask</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;mask.png&#x27;</span>, mask)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 遮罩 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python 内置函数。</title>
+      <link href="/post/57911190.html"/>
+      <url>/post/57911190.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-getattr-和-setattr"><a href="#1-getattr-和-setattr" class="headerlink" title="1 getattr 和 setattr"></a>1 getattr 和 setattr</h2><p>在Python中，<code>eval</code> 函数可以执行一个字符串表达式，并返回表达式的值。但是，使用<code>eval</code> 通常不是推荐的做法，因为它可能会带来安全风险，特别是如果表达式字符串来自不可信的源。</p><p>在你的例子中，如果<code>egg</code>是一个变量，它包含了类<code>MachinStatus</code>中某个属性或方法的名称，你可以通过以下方式使用<code>getattr</code>函数来安全地获取这个属性或方法，而不是使用<code>eval</code>：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MachinStatus</span>:</span><br><span class="line">    <span class="comment"># 假设这个类有一些属性和方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.egg = <span class="string">&quot;属性值&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一些方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">some_method</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 假设egg变量包含的是属性或方法的名称</span></span><br><span class="line">egg = <span class="string">&quot;egg&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用getattr安全地获取属性或调用方法</span></span><br><span class="line">status = <span class="built_in">getattr</span>(MachinStatus, egg)</span><br><span class="line"><span class="built_in">setattr</span>(MachinStatus, egg, <span class="string">&quot;新属性值&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(status)  <span class="comment"># 输出: 属性值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>如果<code>egg</code>是类<code>MachinStatus</code>的实例属性或方法，你需要先创建一个<code>MachinStatus</code>的实例，然后使用<code>getattr</code>来获取实例的属性或调用方法：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建MachinStatus的实例</span></span><br><span class="line">status_instance = MachinStatus()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用getattr来获取实例属性或调用方法</span></span><br><span class="line">status = <span class="built_in">getattr</span>(status_instance, egg)</span><br><span class="line"><span class="built_in">print</span>(status)  <span class="comment"># 输出: 属性值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>如果你确实需要使用<code>eval</code>（比如在一些动态执行代码的场景中），你应该确保<code>egg</code>变量的值是安全的，并且不包含任何可能执行恶意代码的字符串。使用<code>eval</code>的方式如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 假设egg变量包含的是属性或方法的名称</span></span><br><span class="line">egg = <span class="string">&quot;egg&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用eval执行字符串表达式</span></span><br><span class="line">status = <span class="built_in">eval</span>(<span class="string">&quot;MachinStatus.&quot;</span> + egg)</span><br><span class="line"><span class="built_in">print</span>(status)  <span class="comment"># 输出: 属性值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>但请记住，这只有在<code>egg</code>是类属性或类方法的名称时才有效，如果是实例属性或方法，<code>eval</code>将无法正确工作。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python 内置函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>明日方舟-生路</title>
+      <link href="/post/f4a5c635.html"/>
+      <url>/post/f4a5c635.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202408161753319.jpg" alt="微信图片_20240816091541"></p><p><img src="/R002_%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F--%E7%94%9F%E8%B7%AF.assets/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240816091602-1723771537882.jpg" alt="微信图片_20240816091602"></p><p><img src="/R002_%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F--%E7%94%9F%E8%B7%AF.assets/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240816091630.jpg" alt="微信图片_20240816091630"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 明日方舟 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 明日方舟 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>明日方舟--孤星</title>
       <link href="/post/47ce0c4b.html"/>
       <url>/post/47ce0c4b.html</url>
@@ -11,10 +111,41 @@
         <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="孤星活动复刻："><a href="#孤星活动复刻：" class="headerlink" title="孤星活动复刻："></a>孤星活动复刻：</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202405301156059.jpeg" alt="35947fdc9e0aadde4bfe3c6a41bdb51"></p><h2 id="未来将至"><a href="#未来将至" class="headerlink" title="未来将至"></a>未来将至</h2><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202405301156124.jpeg" alt="4ef424ee763da96c2c98d221d41adc1"></p><h2 id="过往未尽"><a href="#过往未尽" class="headerlink" title="过往未尽"></a>过往未尽</h2><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202405301156367.jpeg" alt="4aedb52a03231fa1489ead529624a31"></p><h2 id="紧握当下"><a href="#紧握当下" class="headerlink" title="紧握当下"></a>紧握当下</h2><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202405301156465.jpeg" alt="d71a8ed5a85a2cadb069b12819ecaf1"></p><h2 id="蚀刻章"><a href="#蚀刻章" class="headerlink" title="蚀刻章"></a>蚀刻章</h2><p>镀层还没拿，任务太烦琐了。</p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202405301156957.jpeg" alt="064ab4c976d09e318ae1b9c3eb22620"></p><p>最后一关抄的温蒂赛妈作业，最后左边两个机甲老是漏，最后放个黍，小羊，两个奶拿下！</p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202405301156814.jpeg" alt="b627ffd9e8e6ddea9308fd08d798bb3"></p><h1 id="科学家不相信梦是假的。"><a href="#科学家不相信梦是假的。" class="headerlink" title="科学家不相信梦是假的。"></a>科学家不相信梦是假的。</h1><p>所有人都知道，359号基地只是一个开始，却没有人料到，克丽斯腾的行动来得如此迅速。<br> 从天而降的“流星”，不知去向的递质，急迫的军方，别有所图的梅兰德，凯尔希与意料之外的访客……一切都预示着有什么即将发生。<br> 没有人看得清，在迷雾的背后究竟隐藏着怎样的秘密，正如没有人料得到，未来离我们如此之近。<br> 试着抬头吧，答案近在眼前。</p><p>“想要抵达某个未来的话，你首先得与终点建立对话，而不是去强行规划它的路线。”</p><p>“我们比旁人掌握了更多知识，就必须扛起更大的责任。我们该走在其他人前面，为他们排除危难，领着他们小心翼翼地往前。真正的先驱者，应该为全人类开道，而不是率先跳进深渊，有去无回。这就是我的源头，我要确保的东西。” </p><p>“山会改变吗？有人抵达过顶峰吗？” </p><p>“寻找的过程是无价的，而找到答案以后，人们便只会歌颂答案。</p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202405301156111.webp" alt="read-normal-img"></p><p>那团从空中坠落的火，仿佛落到了她的眼睛里，时至今日都在燃烧着。 </p><p>在那之后的很多个夜晚，那团火光反复复地出现在我的梦中。</p><p>我不忍心看见它再度熄灭。</p><p>如若此后百年千年,来人漫步于繁星身侧,人们便要赞颂她的名。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 明日方舟 </category>
+          
+      </categories>
+      
       
         <tags>
             
             <tag> 明日方舟 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows在局域网内访问Linux服务器上的web项目</title>
+      <link href="/post/f3b61b38.html"/>
+      <url>/post/f3b61b38.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="Windows在局域网内无法访问Linux服务器上的web项目问题"><a href="#Windows在局域网内无法访问Linux服务器上的web项目问题" class="headerlink" title="Windows在局域网内无法访问Linux服务器上的web项目问题"></a>Windows在局域网内无法访问Linux服务器上的web项目问题</h2><p>Ubuntu18.04（主机）IP：192.169.8.22</p><p>Windows IP：192.168.8.15</p><p>使用 Win访问主机 127.0.0.1:9754 访问不通。</p><p><strong>解决：</strong></p><p>（1）把主机 localhost 对应的地址 127.0.0.1 改成主机的IP地址<br>文件：&#x2F;etc&#x2F;hosts</p><p>（2）防火墙设置：</p><p>查看防火墙是否开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure><p>若没有开启则开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld  关闭则start改为stop</span><br></pre></td></tr></table></figure><p>查看所有开启的端口</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure><p>注：启动防火墙后，默认没有开启任何端口，需要手动开启端口</p><p>防火墙开启端口访问</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure><p>命令含义：  –zone #作用域    –add-port&#x3D;80&#x2F;tcp #添加端口，格式为：端口&#x2F;通讯协议    –permanent #永久生效，没有此参数重启后失效</p><p>注：开启后需要重启防火墙才生效     </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure><p>其他常用命令：</p><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>firewall-cmd –state</td><td>查看防火墙状态，是否是running</td></tr><tr><td>firewall-cmd –reload</td><td>重新载入配置，比如添加规则之后，需要执行此命令</td></tr><tr><td>firewall-cmd –get-zones</td><td>列出支持的zone</td></tr><tr><td>firewall-cmd –get-services</td><td>列出支持的服务，在列表中的服务是放行的</td></tr><tr><td>firewall-cmd –query-service ftp</td><td>查看ftp服务是否支持，返回yes或者no</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp</td><td>临时开放ftp服务</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp –permanent</td><td>永久开放ftp服务</td></tr><tr><td>firewall-cmd –remove-service&#x3D;ftp –permanent</td><td>永久移除ftp服务</td></tr><tr><td>firewall-cmd –add-port&#x3D;80&#x2F;tcp –permanent</td><td>永久添加80端口</td></tr><tr><td>firewall-cmd –remove-port&#x3D;80&#x2F;tcp –permanent</td><td>永久移除80端口</td></tr><tr><td>firewall-cmd –zone&#x3D;public –list-ports</td><td>查看已开放的端口</td></tr><tr><td>iptables -L -n</td><td>查看规则，这个命令是和iptables的相同的</td></tr><tr><td>man firewall-cmd</td><td></td></tr></tbody></table><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://www.cnblogs.com/hapjin/p/5367429.html">Windows 与 Linux下关于端口不能访问的问题</a></p><p><a href="https://blog.csdn.net/weixin_38750084/article/details/90387056">linux：centos7开启80端口，开放外网访问_开放80端口</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 局域网 </tag>
             
         </tags>
       
@@ -30,6 +161,18 @@
         <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="1、ChatTTS"><a href="#1、ChatTTS" class="headerlink" title="1、ChatTTS"></a>1、ChatTTS</h1><p>项目地址：<a href="https://github.com/2noise/ChatTTS?ref=upstract.com">https://github.com/2noise/ChatTTS?ref=upstract.com</a></p><p>模型下载：<a href="https://www.modelscope.cn/models/pzc163/chatTTS/summary">https://www.modelscope.cn/models/pzc163/chatTTS/summary</a></p><p>按照教程安装即可，为 CPU 版本，如果使用 GPU， 在Pytorch官网下载适配设备 Cuda 的torch 即可。不过 Windows 下一直没有成功。报错：cannot import name ‘CommitOperationAdd’ from ‘huggingface_hub</p><p>参考<a href="https://github.com/2noise/ChatTTS/issues/152">https://github.com/2noise/ChatTTS/issues/152</a></p><p>可保存音色，之后使用固定音色推理，环境和原版一样即可。</p><p><a href="https://github.com/craii/ChatTTS_WebUI">https://github.com/craii/ChatTTS_WebUI</a></p><h1 id="2、GPT-SoVITs"><a href="#2、GPT-SoVITs" class="headerlink" title="2、GPT-SoVITs"></a>2、GPT-SoVITs</h1><p>项目地址：<a href="https://github.com/RVC-Boss/GPT-SoVITS">https://github.com/RVC-Boss/GPT-SoVITS</a></p><p>预训练模型下载：</p><p><a href="https://hf-mirror.com/lj1995/GPT-SoVITS/tree/main">https://hf-mirror.com/lj1995/GPT-SoVITS/tree/main</a></p><p><a href="https://hf-mirror.com/TencentGameMate/chinese-hubert-base/tree/main">https://hf-mirror.com/TencentGameMate/chinese-hubert-base/tree/main</a></p><p><a href="https://hf-mirror.com/hfl/chinese-roberta-wwm-ext-large/tree/main">https://hf-mirror.com/hfl/chinese-roberta-wwm-ext-large/tree/main</a></p><h2 id="conda环境下nltk-data下载失败问题解决-nltk-download-‘cmudict’"><a href="#conda环境下nltk-data下载失败问题解决-nltk-download-‘cmudict’" class="headerlink" title="conda环境下nltk_data下载失败问题解决_nltk.download(‘cmudict’)"></a>conda环境下nltk_data下载失败问题解决_nltk.download(‘cmudict’)</h2><p>打开<a href="https://so.csdn.net/so/search?q=github&spm=1001.2101.3001.7020">github</a>地址：<a href="https://github.com/nltk/nltk_data">https://github.com/nltk/nltk_data</a></p><p>!<a href="https://img-blog.csdnimg.cn/2ff3d1777cc24942bedf40afc715d2ca.png">https://img-blog.csdnimg.cn/2ff3d1777cc24942bedf40afc715d2ca.png</a></p><p>下载整个工程，下载完成后，将packages目录重命令为nltk_data，然后整个nltk_data文件夹拷贝到&#x2F;usr&#x2F;share目录下，拷贝完成后，如下所示：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(vits) [root@localhost Bert-VITS2]<span class="comment"># ll /usr/share/nltk_data/</span></span><br><span class="line">总用量 12</span><br><span class="line">drwxr-xr-x 2 root root   76 11月  8 15:29 chunkers</span><br><span class="line">drwxr-xr-x 2 root root 8192 11月  8 15:30 corpora</span><br><span class="line">drwxr-xr-x 2 root root  316 11月  8 15:30 grammars</span><br><span class="line">drwxr-xr-x 2 root root   56 11月  8 15:30 <span class="built_in">help</span></span><br><span class="line">drwxr-xr-x 2 root root  114 11月  8 15:30 misc</span><br><span class="line">drwxr-xr-x 2 root root  244 11月  8 15:30 models</span><br><span class="line">drwxr-xr-x 2 root root   68 11月  8 15:30 sentiment</span><br><span class="line">drwxr-xr-x 2 root root  162 11月  8 15:30 stemmers</span><br><span class="line">drwxr-xr-x 2 root root  332 11月  8 15:30 taggers</span><br><span class="line">drwxr-xr-x 2 root root   52 11月  8 15:30 tokenizers</span><br></pre></td></tr></table></figure><p>再次运行模型程序，问题已经解决</p>]]></content>
       
       
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 语音合成 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -43,19 +186,18 @@
         <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="一图流背景修改"><a href="#一图流背景修改" class="headerlink" title="一图流背景修改"></a>一图流背景修改</h1><p><a href="https://android99.com/2021/08/10/butterfly-top-image-modify/#:~:text=%E4%BF%AE%E6%94%B9%20Butterfly%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20_config.butterfly.yml%E3%80%82,%E7%BC%96%E8%BE%91%20index_img%E3%80%81index_top_img_height%E3%80%81background%E3%80%81footer_bg%E3%80%81mask.header%E9%80%89%E9%A1%B9%E3%80%82%20%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%AB%99%E8%83%8C%E6%99%AF%EF%BC%8C%E5%B0%86%E4%B8%BB%E9%A1%B5%E9%A1%B6%E9%83%A8%E5%9B%BE%E5%92%8C%E9%A1%B5%E8%84%9A%E8%83%8C%E6%99%AF%E6%94%B9%E4%B8%BA%E9%80%8F%E6%98%8E%EF%BC%8C%E8%B0%83%E6%95%B4%E4%B8%BB%E9%A1%B5%E9%A1%B6%E9%83%A8%E5%9B%BE%E9%AB%98%E5%BA%A6%EF%BC%8C%E7%A7%BB%E9%99%A4%E9%A1%B6%E9%83%A8%E5%9B%BE%E7%9A%84%E9%BB%91%E8%89%B2%E5%8D%8A%E9%80%8F%E9%81%AE%E7%BD%A9%E3%80%82">Butterfly主题 一图流背景与顶部图修改</a></p><p><a href="2.assets/65396-17170488469566.html">教程：Butterfly 主题的一图流和视频流背景修改方法</a></p><p><a href="https://blog.captainz.cc/posts/hexo_butterfly_top_img.html">Hexo+Butterfly 主题一图流背景与顶部图修改</a></p><p>主题美化：</p><p><a href="https://blog.captainz.cc/posts/hexo_butterfly_beautify_1.html">https://blog.captainz.cc/posts/hexo_butterfly_beautify_1.html</a></p><p><a href="https://qiu-weidong.github.io/2022/05/22/blog/hexo01/">https://qiu-weidong.github.io/2022/05/22/blog/hexo01/</a></p><p><a href="https://blog.csdn.net/m0_69079573/article/details/132012956?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-132012956-blog-104373665.235">https://blog.csdn.net/m0_69079573/article/details/132012956?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-132012956-blog-104373665.235</a></p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Windows在局域网内访问Linux服务器上的web项目</title>
-      <link href="/post/f3b61b38.html"/>
-      <url>/post/f3b61b38.html</url>
-      
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="Windows在局域网内无法访问Linux服务器上的web项目问题"><a href="#Windows在局域网内无法访问Linux服务器上的web项目问题" class="headerlink" title="Windows在局域网内无法访问Linux服务器上的web项目问题"></a>Windows在局域网内无法访问Linux服务器上的web项目问题</h2><p>Ubuntu18.04（主机）IP：192.169.8.22</p><p>Windows IP：192.168.8.15</p><p>使用 Win访问主机 127.0.0.1:9754 访问不通。</p><p><strong>解决：</strong></p><p>（1）把主机 localhost 对应的地址 127.0.0.1 改成主机的IP地址<br>文件：&#x2F;etc&#x2F;hosts</p><p>（2）防火墙设置：</p><p>查看防火墙是否开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure><p>若没有开启则开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld  关闭则start改为stop</span><br></pre></td></tr></table></figure><p>查看所有开启的端口</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure><p>注：启动防火墙后，默认没有开启任何端口，需要手动开启端口</p><p>防火墙开启端口访问</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure><p>命令含义：  –zone #作用域    –add-port&#x3D;80&#x2F;tcp #添加端口，格式为：端口&#x2F;通讯协议    –permanent #永久生效，没有此参数重启后失效</p><p>注：开启后需要重启防火墙才生效     </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure><p>其他常用命令：</p><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>firewall-cmd –state</td><td>查看防火墙状态，是否是running</td></tr><tr><td>firewall-cmd –reload</td><td>重新载入配置，比如添加规则之后，需要执行此命令</td></tr><tr><td>firewall-cmd –get-zones</td><td>列出支持的zone</td></tr><tr><td>firewall-cmd –get-services</td><td>列出支持的服务，在列表中的服务是放行的</td></tr><tr><td>firewall-cmd –query-service ftp</td><td>查看ftp服务是否支持，返回yes或者no</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp</td><td>临时开放ftp服务</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp –permanent</td><td>永久开放ftp服务</td></tr><tr><td>firewall-cmd –remove-service&#x3D;ftp –permanent</td><td>永久移除ftp服务</td></tr><tr><td>firewall-cmd –add-port&#x3D;80&#x2F;tcp –permanent</td><td>永久添加80端口</td></tr><tr><td>firewall-cmd –remove-port&#x3D;80&#x2F;tcp –permanent</td><td>永久移除80端口</td></tr><tr><td>firewall-cmd –zone&#x3D;public –list-ports</td><td>查看已开放的端口</td></tr><tr><td>iptables -L -n</td><td>查看规则，这个命令是和iptables的相同的</td></tr><tr><td>man firewall-cmd</td><td></td></tr></tbody></table><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://www.cnblogs.com/hapjin/p/5367429.html">Windows 与 Linux下关于端口不能访问的问题</a></p><p><a href="https://blog.csdn.net/weixin_38750084/article/details/90387056">linux：centos7开启80端口，开放外网访问_开放80端口</a></p>]]></content>
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
       
       
+        <tags>
+            
+            <tag> butterfly </tag>
+            
+        </tags>
       
     </entry>
     
@@ -69,10 +211,16 @@
         <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="2、Windows-下-PicGo-安装-Gitee-插件失败"><a href="#2、Windows-下-PicGo-安装-Gitee-插件失败" class="headerlink" title="2、Windows 下 PicGo 安装 Gitee 插件失败"></a>2、Windows 下 PicGo 安装 Gitee 插件失败</h2><p>使用管理员权限打开软件。</p><h2 id="3、解决hexo博客不能显示图床图片问题"><a href="#3、解决hexo博客不能显示图床图片问题" class="headerlink" title="3、解决hexo博客不能显示图床图片问题"></a>3、<a href="https://www.cnblogs.com/yangstar/articles/16688692.html">解决hexo博客不能显示图床图片问题</a></h2><p>解决方法 ：在markdown文章开头添加一个<code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;</code></p><p>然后就是<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>上传博客了</p><p>参考: <a href="https://www.cnblogs.com/yangstar/articles/16688692.html">解决hexo博客不能显示图床图片问题</a></p><h2 id="4、解决git-Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused报错问题"><a href="#4、解决git-Failed-to-connect-to-127-0-0-1-port-1080-Connection-refused报错问题" class="headerlink" title="4、解决git: Failed to connect to 127.0.0.1 port 1080: Connection refused报错问题"></a>4、<a href="https://blog.csdn.net/weixin_44547510/article/details/118457285">解决git: Failed to connect to 127.0.0.1 port 1080: Connection refused报错问题</a></h2><p>（1）在该仓库目录下运行：（解决）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> 工作 </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -88,10 +236,41 @@
         <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="1、需求：Python-获取-git-分支最后一次部署信息。"><a href="#1、需求：Python-获取-git-分支最后一次部署信息。" class="headerlink" title="1、需求：Python 获取 git 分支最后一次部署信息。"></a>1、需求：Python 获取 git 分支最后一次部署信息。</h2><p>（1）安装GitPython库：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install gitpython</span><br></pre></td></tr></table></figure><p>（2）获取当前分支对象</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> git <span class="keyword">import</span> Repo</span><br><span class="line"></span><br><span class="line">repo = Repo(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">current_branch = repo.active_branch</span><br><span class="line">commit_msg = current_branch.commit.message</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>（3）获取指定分支对象，以 master 分支为例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ref <span class="keyword">in</span> repo.heads:</span><br><span class="line">    <span class="keyword">if</span> ref.name == <span class="string">&quot;master&quot;</span>:</span><br><span class="line">        master_branch = ref</span><br><span class="line">        commit_msg = master_branch.commit.message</span><br></pre></td></tr></table></figure><p>参考：<a href="https://stackoverflow.com/questions/2473035/checkout-or-list-remote-branches-in-gitpython">checkout-or-list-remote-branches-in-gitpython</a></p>]]></content>
       
       
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> 工作 </tag>
+            <tag> python/git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo 安装</title>
+      <link href="/post/4a17b156.html"/>
+      <url>/post/4a17b156.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -101,19 +280,6 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/post/4a17b156.html"/>
-      <url>/post/4a17b156.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo 安装</title>
       <link href="/post/4a17b156.html"/>
       <url>/post/4a17b156.html</url>
       
