@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>明日方舟-火山旅梦</title>
+      <link href="/post/8716e289.html"/>
+      <url>/post/8716e289.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>2024.8.22–2024.9.1</p><h1 id="火山旅梦"><a href="#火山旅梦" class="headerlink" title="火山旅梦"></a>火山旅梦</h1><h2 id="温泉假日"><a href="#温泉假日" class="headerlink" title="温泉假日"></a>温泉假日</h2><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202409022054400.png" alt="屏幕截图 2024-08-26 202123"></p><h2 id="城市寻宝"><a href="#城市寻宝" class="headerlink" title="城市寻宝"></a>城市寻宝</h2><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202409022054505.png" alt="屏幕截图 2024-08-26 202130"></p><h2 id="岩浆冲浪"><a href="#岩浆冲浪" class="headerlink" title="岩浆冲浪"></a>岩浆冲浪</h2><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202409022054722.png" alt="屏幕截图 2024-08-26 202135"></p><h1 id="蚀刻章"><a href="#蚀刻章" class="headerlink" title="蚀刻章"></a>蚀刻章</h1><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202409022054835.png" alt="屏幕截图 2024-08-27 184610"></p><p>肝了一个多小时，还是得益达+小罗</p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202409022055628.png" alt="屏幕截图 2024-08-26 202102"></p><p>终于把小羊练度拉满了！</p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202409022054188.png" alt="屏幕截图 2024-09-02 193402"></p><p><img src="https://gtblog.oss-cn-shanghai.aliyuncs.com/202409022054074.png" alt="屏幕截图 2024-09-02 193448"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 明日方舟 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 明日方舟 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>明日方舟-太阳甩在身后</title>
       <link href="/post/3cfa24d6.html"/>
       <url>/post/3cfa24d6.html</url>
@@ -129,31 +154,6 @@
     
     
     <entry>
-      <title>Windows在局域网内访问Linux服务器上的web项目</title>
-      <link href="/post/f3b61b38.html"/>
-      <url>/post/f3b61b38.html</url>
-      
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="Windows在局域网内无法访问Linux服务器上的web项目问题"><a href="#Windows在局域网内无法访问Linux服务器上的web项目问题" class="headerlink" title="Windows在局域网内无法访问Linux服务器上的web项目问题"></a>Windows在局域网内无法访问Linux服务器上的web项目问题</h2><p>Ubuntu18.04（主机）IP：192.169.8.22</p><p>Windows IP：192.168.8.15</p><p>使用 Win访问主机 127.0.0.1:9754 访问不通。</p><p><strong>解决：</strong></p><p>（1）把主机 localhost 对应的地址 127.0.0.1 改成主机的IP地址<br>文件：&#x2F;etc&#x2F;hosts</p><p>（2）防火墙设置：</p><p>查看防火墙是否开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure><p>若没有开启则开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld  关闭则start改为stop</span><br></pre></td></tr></table></figure><p>查看所有开启的端口</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure><p>注：启动防火墙后，默认没有开启任何端口，需要手动开启端口</p><p>防火墙开启端口访问</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure><p>命令含义：  –zone #作用域    –add-port&#x3D;80&#x2F;tcp #添加端口，格式为：端口&#x2F;通讯协议    –permanent #永久生效，没有此参数重启后失效</p><p>注：开启后需要重启防火墙才生效     </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure><p>其他常用命令：</p><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>firewall-cmd –state</td><td>查看防火墙状态，是否是running</td></tr><tr><td>firewall-cmd –reload</td><td>重新载入配置，比如添加规则之后，需要执行此命令</td></tr><tr><td>firewall-cmd –get-zones</td><td>列出支持的zone</td></tr><tr><td>firewall-cmd –get-services</td><td>列出支持的服务，在列表中的服务是放行的</td></tr><tr><td>firewall-cmd –query-service ftp</td><td>查看ftp服务是否支持，返回yes或者no</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp</td><td>临时开放ftp服务</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp –permanent</td><td>永久开放ftp服务</td></tr><tr><td>firewall-cmd –remove-service&#x3D;ftp –permanent</td><td>永久移除ftp服务</td></tr><tr><td>firewall-cmd –add-port&#x3D;80&#x2F;tcp –permanent</td><td>永久添加80端口</td></tr><tr><td>firewall-cmd –remove-port&#x3D;80&#x2F;tcp –permanent</td><td>永久移除80端口</td></tr><tr><td>firewall-cmd –zone&#x3D;public –list-ports</td><td>查看已开放的端口</td></tr><tr><td>iptables -L -n</td><td>查看规则，这个命令是和iptables的相同的</td></tr><tr><td>man firewall-cmd</td><td></td></tr></tbody></table><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://www.cnblogs.com/hapjin/p/5367429.html">Windows 与 Linux下关于端口不能访问的问题</a></p><p><a href="https://blog.csdn.net/weixin_38750084/article/details/90387056">linux：centos7开启80端口，开放外网访问_开放80端口</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Ubuntu </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 局域网 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>ChatTTS</title>
       <link href="/post/6dd28e9b.html"/>
       <url>/post/6dd28e9b.html</url>
@@ -171,6 +171,31 @@
         <tags>
             
             <tag> 语音合成 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows在局域网内访问Linux服务器上的web项目</title>
+      <link href="/post/f3b61b38.html"/>
+      <url>/post/f3b61b38.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="Windows在局域网内无法访问Linux服务器上的web项目问题"><a href="#Windows在局域网内无法访问Linux服务器上的web项目问题" class="headerlink" title="Windows在局域网内无法访问Linux服务器上的web项目问题"></a>Windows在局域网内无法访问Linux服务器上的web项目问题</h2><p>Ubuntu18.04（主机）IP：192.169.8.22</p><p>Windows IP：192.168.8.15</p><p>使用 Win访问主机 127.0.0.1:9754 访问不通。</p><p><strong>解决：</strong></p><p>（1）把主机 localhost 对应的地址 127.0.0.1 改成主机的IP地址<br>文件：&#x2F;etc&#x2F;hosts</p><p>（2）防火墙设置：</p><p>查看防火墙是否开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure><p>若没有开启则开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld  关闭则start改为stop</span><br></pre></td></tr></table></figure><p>查看所有开启的端口</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure><p>注：启动防火墙后，默认没有开启任何端口，需要手动开启端口</p><p>防火墙开启端口访问</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure><p>命令含义：  –zone #作用域    –add-port&#x3D;80&#x2F;tcp #添加端口，格式为：端口&#x2F;通讯协议    –permanent #永久生效，没有此参数重启后失效</p><p>注：开启后需要重启防火墙才生效     </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure><p>其他常用命令：</p><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>firewall-cmd –state</td><td>查看防火墙状态，是否是running</td></tr><tr><td>firewall-cmd –reload</td><td>重新载入配置，比如添加规则之后，需要执行此命令</td></tr><tr><td>firewall-cmd –get-zones</td><td>列出支持的zone</td></tr><tr><td>firewall-cmd –get-services</td><td>列出支持的服务，在列表中的服务是放行的</td></tr><tr><td>firewall-cmd –query-service ftp</td><td>查看ftp服务是否支持，返回yes或者no</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp</td><td>临时开放ftp服务</td></tr><tr><td>firewall-cmd –add-service&#x3D;ftp –permanent</td><td>永久开放ftp服务</td></tr><tr><td>firewall-cmd –remove-service&#x3D;ftp –permanent</td><td>永久移除ftp服务</td></tr><tr><td>firewall-cmd –add-port&#x3D;80&#x2F;tcp –permanent</td><td>永久添加80端口</td></tr><tr><td>firewall-cmd –remove-port&#x3D;80&#x2F;tcp –permanent</td><td>永久移除80端口</td></tr><tr><td>firewall-cmd –zone&#x3D;public –list-ports</td><td>查看已开放的端口</td></tr><tr><td>iptables -L -n</td><td>查看规则，这个命令是和iptables的相同的</td></tr><tr><td>man firewall-cmd</td><td></td></tr></tbody></table><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://www.cnblogs.com/hapjin/p/5367429.html">Windows 与 Linux下关于端口不能访问的问题</a></p><p><a href="https://blog.csdn.net/weixin_38750084/article/details/90387056">linux：centos7开启80端口，开放外网访问_开放80端口</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 局域网 </tag>
             
         </tags>
       
